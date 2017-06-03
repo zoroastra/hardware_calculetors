@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Spree Demo Site </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<body>
+  <header>
+    <%= link_to image_tag("spree-commerce.png", alt: "Вернутся в магазин?"),
+    'http://localhost:3000',
+    {:class => 'websiteLogo'} %>
+    <%= link_to 'Строительные калькуляторы', {:controller => 'calculators', :action => 'foundations'},
+    {:class => 'webisteTitle'} %>
+  </header>
+  <nav id="horzNav">
+    <p>
+      <%= link_to 'Фундамент', {:controller => 'calculators', :action => 'foundations'} %>
+      <%= link_to 'Стіни', {:controller => 'calculators', :action => 'walls'} %>
+      <%= link_to 'Дах', {:controller => 'calculators', :action => 'roofs'} %>
+      <%= link_to 'Матеріали', {:controller => 'calculators', :action => 'materials'} %>
+    </p>
+  </nav>
+  <main id="content">
+    <%= yield %>
+  </main>
+</div>
+</body>
+</html>
